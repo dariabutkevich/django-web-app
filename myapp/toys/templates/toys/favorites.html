@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Избранные игрушки{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Избранное</h1>
+
+        {% if toys %}
+            <div class="toys-container">
+                {% for toy in toys %}
+                    <a href="{% url 'toys_detail' toy.id %}" class="toy-card-link">
+                        <div class="toy-card">
+                            <img src="{{ toy.image.url }}" alt="{{ toy.name }}" style="max-width: 100%;">
+                            <h3>{{ toy.name }}</h3>
+                            <p>{{ toy.category.name }}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Пока нет избранных игрушек.</p>
+        {% endif %}
+    </div>
+{% endblock %}

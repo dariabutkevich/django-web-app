@@ -1,0 +1,145 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <img class="photo_1 fade-in delay-1" src="{% static 'main/img/2.jpeg' %}" alt="Главная"><br>
+    <h2 class="index_text fade-in delay-2">{{title}}: Откройте мир дизайнерских игрушек!</h2><br>
+    <p style="font-weight: 500" class="index_text_p fade-in delay-3">
+        В каждом экземпляре — отпечаток вашей индивидуальности и душевной ценности.</p>
+        <p class="index_text_p fade-in delay-3">
+            Elegant Collectibles — это сообщество людей, которые ценят искусство коллекционирования и стремятся найти что-то особенное.
+            Наша команда всегда готова помочь вам в поиске редких и уникальных предметов, которые станут настоящими жемчужинами вашей коллекции.
+            Мы гордимся тем, что предлагаем только высококачественные и оригинальные изделия, созданные талантливыми художниками и дизайнерами.
+            Каждая игрушка и коллекционный предмет имеет свою историю и характер, что делает их особенно ценными для наших клиентов.</p><br>
+         <h2 class="index_text2 fade-in delay-3">Специальные предложения</h2>
+        <div class="services fade-in delay-3">
+            <div class="service">
+                <div class="image-container">
+                    <img src="{% static 'main/img/4.jpg' %}" alt="Дизайнерские игрушки" class="service-image">
+                </div>
+                <h3>Дизайнерские игрушки</h3>
+                <p>Мы предлагаем отобранные игрушки, созданные талантливыми художниками и дизайнерами.
+                    Каждая игрушка — авторское произведение с уникальным стилем и историей.
+            </div>
+            <div class="service">
+                <div class="image-container">
+                    <img src="{% static 'main/img/6.jpg' %}" alt="Коллекционные предметы" class="service-image">
+                </div>
+                <h3>Коллекционные предметы</h3>
+                <p>На нашем сайте представлены редкие и эксклюзивные коллекционные изделия.
+                    Предметы выпускаются ограниченным тиражом, имеют высокую ценность и будут гордостью любой коллекции.</p>
+            </div>
+            <div class="service">
+                <div class="image-container">
+                    <img src="{% static 'main/img/5.png' %}" alt="Персонализированные игрушки" class="service-image">
+                </div>
+                <h3>Индивидуальные игрушки</h3>
+                <p>Создайте что-то по-настоящему личное.
+                    Мы сотрудничаем с мастерами, которые реализуют ваш индивидуальный заказ: от эскиза до готовой игрушки.
+                    </p>
+            </div>
+        </div>
+        <div class="social-links fade-in delay-4 scroll-hidden">
+        <h3>Присоединяйтесь к нашему сообществу</h3>
+            <div class="icons scroll-hidden">
+                <a href="https://instagram.com" class="scroll-hidden" target="_blank" title="Instagram"><i class="fa-brands fa-instagram" style="color: #ed52b7;"></i></a>
+                <a href="https://t.me" class="scroll-hidden" target="_blank" title="Telegram"><i class="fa-brands fa-telegram" style="color: #6ac8f0;"></i></a>
+                <a href="https://youtube.com" class="scroll-hidden" target="_blank" title="YouTube"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i></a>
+                <a href="https://x.com" class="scroll-hidden" target="_blank" title="X"><i class="fa-brands fa-square-x-twitter" style="color: #000000;"></i></a>
+                <a href="https://facebook.com" class="scroll-hidden" target="_blank" title="Facebook"><i class="fa-brands fa-square-facebook" style="color: #0000a0;"></i></a>
+                <a href="https://tiktok.com" class="scroll-hidden" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok" style="color: #000000;"></i></a>
+                <a href="https://pinterest.com" class="scroll-hidden" target="_blank" title="Pinterest"><i class="fa-brands fa-pinterest" style="color: #f90000;"></i></a>
+            </div>
+        </div>
+        <div class="faq fade-in delay-5 scroll-up-hidden">
+    <h3>FAQ</h3>
+
+    <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+        <h2 class="accordion-header" id="q5">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5">
+                Как ухаживать за коллекционными игрушками?
+            </button>
+        </h2>
+        <div id="a5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+                Рекомендуем хранить игрушки в сухом месте вдали от прямого солнечного света и пыли. Для некоторых изделий можно использовать защитные боксы.
+            </div>
+        </div>
+        </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="q6">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a6">
+                Как узнать о новых поступлениях?
+            </button>
+        </h2>
+        <div id="a6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+                Подпишитесь на нашу рассылку или следите за нами в соцсетях, чтобы быть в курсе новинок и специальных предложений.
+            </div>
+        </div>
+    </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="q1">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1">
+                    Как оформить заказ?
+                </button>
+            </h2>
+            <div id="a1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Вы можете оформить заказ через сайт, выбрав товар и заполнив форму. После подтверждения с вами свяжется менеджер.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="q2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">
+                    Можно ли вернуть товар?
+                </button>
+            </h2>
+            <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Да, возврат возможен в течение 14 дней, если товар сохранил товарный вид и упаковку.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="q3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">
+                    Как долго ждать доставку?
+                </button>
+            </h2>
+            <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    В среднем доставка занимает от 3 до 7 рабочих дней, в зависимости от региона.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="q4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4">
+                    Можно ли заказать уникальный дизайн?
+                </button>
+            </h2>
+            <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Да! Мы предлагаем персонализированные заказы. Вы можете описать свою идею, и наш мастер создаст уникальную игрушку по вашему запросу.
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+        {% filter upper %}
+
+        {% endfilter %}
+
+    </div>
+{% endblock %}

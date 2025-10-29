@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+{% block title %}Редактирование: {{ form.instance.name }}{% endblock %}
+{% block content %}
+<div class="features">
+    <h1>Редактировать игрушку</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success" type="submit">Сохранить</button>
+        <a href="{% url 'toys_detail' form.instance.pk %}" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>
+{% endblock %}

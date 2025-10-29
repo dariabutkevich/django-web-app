@@ -1,0 +1,92 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Игрушки{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Арт-объекты</h1>
+
+        {% if category %}
+            <h2>{{ category.name }}</h2>
+            <p>{{ category.description }}</p>
+        {% endif %}
+
+        {% if toys %}
+        <form method="get" class="row g-3 mb-4  p-3 ">
+             <div class="col-md-3">
+                <label class="form-label">Категория</label>
+                <select name="category" class="form-select">
+                    <option value="">Все</option>
+                    {% for cat in categories %}
+                        <option value="{{ cat.name }}" {% if request.GET.category == cat.name %}selected{% endif %}>{{ cat.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Размер</label>
+                <select name="height" class="form-select">
+                    <option value="">Все</option>
+                    {% for h in heights %}
+                        <option value="{{ h }}" {% if request.GET.height == h %}selected{% endif %}>{{ h }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Материал</label>
+                <select name="material" class="form-select">
+                    <option value="">Все</option>
+                    {% for m in materials %}
+                        <option value="{{ m }}" {% if request.GET.material == m %}selected{% endif %}>{{ m }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Дата от</label>
+                <input type="date" name="date_from" value="{{ request.GET.date_from }}" class="form-control">
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Дата до</label>
+                <input type="date" name="date_to" value="{{ request.GET.date_to }}" class="form-control">
+            </div>
+
+            <div class="col-md-1 d-flex align-items-end">
+                <button type="submit" class="btn btn-danger w-100">Фильтр</button>
+            </div>
+
+            <div class="col-md-12 text-end">
+                <a href="{% url 'toys_home' %}" class="btn btn-secondary btn-sm mt-2">Сбросить</a>
+            </div>
+        </form>
+
+
+    <div class="toys-container">
+        {% for el in toys %}
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'toys_detail' el.id %}" class="toy-card-link">
+                    <div class="toy-card">
+                        <img src="{{ el.image.url }}" alt="{{ el.name }}" style="max-width: 100%;">
+                        <h3>{{ el.name }}</h3>
+                        <p>{{ el.category }}</p>
+                    </div>
+                </a>
+            {% else %}
+                <div class="toy-card" title="Войдите, чтобы посмотреть детали">
+                    <img src="{{ el.image.url }}" alt="{{ el.name }}" style="max-width: 100%; filter: grayscale(50%);">
+                    <h3>{{ el.name }}</h3>
+                    <p>{{ el.category }}</p>
+                    <small style="color: red;">Доступ только для авторизованных пользователей</small>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+{% else %}
+    <p>Нет записей!</p>
+{% endif %}
+
+    </div>
+{% endblock %}

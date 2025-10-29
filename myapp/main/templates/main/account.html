@@ -1,0 +1,34 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Аккаунт{% endblock %}
+
+{% block content %}
+<div class="features account-page">
+    <h1 class="mb-4">Личный кабинет</h1>
+
+    {% if request.user.is_authenticated %}
+        <div class="account-info">
+            <p><strong>Имя пользователя:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Роль:</strong>
+                {% if user.is_superuser %}
+                    Администратор
+                {% else %}
+                    Пользователь
+                {% endif %}
+            </p>
+
+            {% if user.is_staff %}
+                <a href="/admin/" class="btn btn-outline-primary mt-3">Перейти в админ-панель</a>
+            {% endif %}
+            <a href="{% url 'favorites_list' %}" class="btn btn-warning mt-3">Мои избранные игрушки</a>
+
+            <a href="{% url 'logout' %}" class="btn btn-outline-danger mt-3">Выйти из аккаунта</a>
+        </div>
+    {% else %}
+        <p>Вы не вошли в систему.</p>
+        <a href="{% url 'login' %}" class="btn btn-success me-2">Вход</a>
+        <a href="{% url 'register' %}" class="btn btn-outline-secondary">Регистрация</a>
+    {% endif %}
+</div>
+{% endblock %}

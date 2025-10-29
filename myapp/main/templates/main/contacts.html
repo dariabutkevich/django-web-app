@@ -1,0 +1,84 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Свяжитесь с нами</h1>
+
+    <div class="row mb-5">
+        <!-- Карта слева -->
+        <div class="col-md-6 mb-4 mb-md-0">
+            <div class="ratio ratio-4x3 rounded shadow-sm">
+                <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3AEXAMPLE&source=constructor"
+                    width="100%" height="100%" frameborder="0"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Контактная информация справа -->
+        <div class="col-md-6 text-end">
+            <div class="bg-light p-4 rounded shadow-sm h-100 d-flex flex-column justify-content-center">
+                <h4 class="mb-3">Elegant Collectibles</h4>
+                <p><i class="fa-solid fa-location-dot me-2 text-danger"></i> ул. Арт-дизайна, 12, Минск, Беларусь</p>
+                <p><i class="fa-solid fa-phone me-2 text-success"></i> <a href="tel:+375291234567">+375 (29) 123-45-67</a></p>
+                <p><i class="fa-solid fa-envelope me-2 text-primary"></i> <a href="mailto:info@elegant-collectibles.by">info@elegant-collectibles.by</a></p>
+                <p><i class="fa-solid fa-clock me-2 text-warning"></i> Пн–Пт: 10:00 – 19:00</p>
+                <div class="mt-3">
+                    <a href="https://instagram.com" class="scroll-hidden" target="_blank" title="Instagram"><i class="fa-brands fa-instagram" style="color: #ed52b7;"></i></a>
+                <a href="https://t.me" class="scroll-hidden" target="_blank" title="Telegram"><i class="fa-brands fa-telegram" style="color: #6ac8f0;"></i></a>
+                <a href="https://youtube.com" class="scroll-hidden" target="_blank" title="YouTube"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i></a>
+                <a href="https://x.com" class="scroll-hidden" target="_blank" title="X"><i class="fa-brands fa-square-x-twitter" style="color: #000000;"></i></a>
+                <a href="https://facebook.com" class="scroll-hidden" target="_blank" title="Facebook"><i class="fa-brands fa-square-facebook" style="color: #0000a0;"></i></a>
+                <a href="https://tiktok.com" class="scroll-hidden" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok" style="color: #000000;"></i></a>
+                <a href="https://pinterest.com" class="scroll-hidden" target="_blank" title="Pinterest"><i class="fa-brands fa-pinterest" style="color: #f90000;"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Форма обратной связи -->
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="p-4 bg-white border rounded shadow-sm">
+                <h4 class="mb-4">Отправить сообщение</h4>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Ваше имя</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Введите имя">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Электронная почта</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Ваш email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Сообщение</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Ваше сообщение..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+<!--<p>Having trouble accessing a course?-->
+<!--            Any of these steps may fix the problem on your end.  Start at the top (the simplest), and test them until the problem is fixed.-->
+<!--            Refresh the page (the curved arrow symbol)-->
+<!--            Logout, then login again-->
+<!--            Close browser-->
+<!--            Reboot your computer (some updates won’t take effect unless the computer or device is restarted)-->
+<!--            If you’re logged into another WordPress site, log out of here, log out of the other site, close browser, open browser again, login here again.-->
+<!--            “Clean your computer” – use ccleaner. It’s free, easy and super fast. Click HERE.-->
+<!--            If you’re on a Mac or using Safari, do this: Safari -> Preferences… -> Security -> Allow plug ins… and make sure that Adobe is on “Allow”-->
+<!--            If you’re using Chrome (and you should be!), you may need an update.  Click HERE.-->
+<!--</p>-->
+

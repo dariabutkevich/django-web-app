@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Добавление арт-объекта{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Добавление арт-объекта</h1>
+        <form method="post" enctype="multipart/form-data">  <!-- ВАЖНО: добавлен enctype -->
+            {% csrf_token %}
+            {{ form.image }}<br>
+            {{ form.name }}<br>
+            {{ form.category }}<br>
+            {{ form.description }}<br>
+            {{ form.design }}<br>
+            {{ form.height }}<br>
+            {{ form.material }}<br>
+            {{ form.date }}<br>
+            <span style="color: red;">{{ error }}</span><br><br>
+            <button class="btn btn-success" type="submit">Добавить объект</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,590 @@
+body {
+font-family: 'Raleway', sans-serif;
+    background: white;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+aside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    width: 100%;
+    padding: 0.5% 5%;
+    color: black;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo-container a {
+    margin-right: 18px;
+    color: #606060;
+}
+.photo_1 {
+    width: 100%;
+}
+.index_text{
+    font-weight: 600;
+    margin-top: 3vh;
+}
+.index_text2{
+    font-weight: 600;
+    margin-top: 3vh;
+}
+.index_text_p {
+    text-align: left;
+    text-indent: 2em; /* отступ первой строки на 2 знака (можно изменить) */
+    line-height: 1.6; /* улучшенная читаемость */
+}
+.full-text-news {
+    text-align: left;
+    align-items: left;
+}
+aside .logo {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: red;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+aside ul li {
+    color: #606060;
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
+    margin: 0 10px;
+    transition: transform .5s ease;
+}
+aside ul li i, .logo-container a i {
+    font-size: 22px;
+    margin-right: 5px;
+}
+aside ul a, .logo-container a {
+    text-decoration: none;
+    color: inherit;
+}
+aside ul li:hover, aside ul a:hover, .logo-container a:hover {
+    color: black;
+    transform: scale(1.1);
+}
+
+main {
+    margin-top: 80px;
+    flex: 1;
+}
+
+main .features {
+    color: black;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+main .features h1 {
+    font-size: 50px;
+}
+
+main .features p {
+    max-width: 100%;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+footer {
+    background: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-content p {
+    margin: 0;
+    color: #606060;
+    font-size: 14px;
+}
+.hidden {
+    display: none;
+}
+
+#dropdown {
+    background-color: white;
+    padding-left: 5%;
+    margin-left: -2%;
+    border: 1px solid #f6f6f6;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 25%;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+#dropdown.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#dropdown ul {
+    list-style: none; /* убираем маркеры */
+    padding: 0;
+    margin: 0;
+}
+#dropdown ul,
+#dropdown li {
+    list-style: none !important;  /* Убираем маркеры */
+    margin: 0;
+    padding: 0;
+}
+
+#dropdown li {
+    font-weight: bold;
+    color: black;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+#dropdown li:hover {
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+
+#dropdown a {
+    text-decoration: none; /* убираем подчёркивание */
+    color: black; /* чёрный текст */
+    display: block; /* вся область кликабельна */
+}
+
+#dropdown a:hover {
+    color: red;
+}
+
+.alert-warning {
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align:left;
+    border: none;
+    color: black
+}
+.alert {
+    background-color: white; /* Белый фон по умолчанию */
+    transition: background-color 0.3s ease;
+    padding: 20px; /* Добавление отступов для новостей */
+    margin-bottom: 10px;
+}
+
+.alert:hover {
+    background-color: #f0f0f0; /* Светло-серый фон при наведении */
+}
+
+.btn-warning {
+    background-color: red; /* Красный фон кнопки */
+    color: white; /* Белый текст кнопки */
+    display: inline-block; /* Чтобы кнопка была блочным элементом */
+    margin: 0 auto;
+    align-items: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Плавный переход для кнопки */
+}
+
+.btn-warning:hover {
+    background-color: #b90706; /* Темно-красный фон при наведении */
+    color: white;
+}
+
+form {
+    padding: 2% 20%;
+    margin-top: 50px;
+}
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 20px;
+}
+.service {
+    background-color: transparent;
+    border: none;
+    padding: 20px;
+    flex: 1 1 calc(33.333% - 20px);
+    box-shadow: none;
+    transition: box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.service:hover {
+    box-shadow: none;
+}
+
+.image-container {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+.service-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+.image-container:hover .service-image {
+    transform: scale(1.05); /* Плавный внутренний зум */
+}
+
+.service h3 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    color: black;
+}
+
+.service p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.fade-in.delay-2 {
+    animation-delay: 1s;
+}
+
+.fade-in.delay-3 {
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.social-links {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.social-links h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.social-links .icons a {
+    margin: 0 22px;
+    font-size: 58px;
+    color: #606060;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links .icons a:hover {
+    transform: scale(1.4) rotate(5deg); /* добавил лёгкий поворот */
+    color: red;
+}
+
+.scroll-hidden {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-up-hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-up-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.account-page {
+    text-align: left;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.account-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.account-page a.btn {
+    margin-right: 10px;
+}
+
+.faq {
+    width: 80%;
+    margin: 50px auto;
+    text-align: left;
+}
+
+.faq h3 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.accordion-button {
+    font-weight: 500;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-button:hover {
+    background-color: red;
+    color: white;
+}
+/* При активном состоянии (открыт аккордеон) */
+.accordion-button:not(.collapsed) {
+    background-color: red;
+    color: white; /* Опционально, чтобы текст стал контрастным */
+}
+.accordion-button:focus {
+    box-shadow: none;
+    outline: none;
+}
+.accordion-body {
+    background-color: #fff;
+    font-size: 16px;
+    color: #444;
+}
+
+.contact-page ul li {
+    margin-bottom: 10px;
+}
+
+.map iframe {
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.contact-page {
+    padding: 2rem;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    max-width: 600px;
+}
+
+.auth-container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.auth-title {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.auth-form .form-label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+
+.form-error {
+    color: red;
+    font-size: 14px;
+}
+
+
+.toys-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.toy-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.toy-card:hover {
+    transform: translateY(-5px);
+}
+.toy-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.toy-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.toy-card h3 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 15px;
+    color: black;
+}
+
+.toy-card p {
+    color: #606060;
+    margin-top: 10px;
+}
+
+.toy-detail-container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.toy-detail-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.toy-image {
+    flex: 1 1 50%;
+}
+
+.toy-image img {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.toy-info {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.toy-info h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.toy-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.toy-description {
+    margin-top: 30px;
+}
+
+.toy-description h3 {
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.toy-description p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-indent: 2em;
+}
+
+.about-page {
+    padding: 40px 10%;
+    line-height: 1.6;
+    font-size: 18px;
+}
+.about-page ul {
+    padding-left: 1.5rem;
+    list-style: disc;
+}
+
+
+.about-page p, .about-page li {
+    font-size: 18px;
+    line-height: 1.6;
+}
+.filter-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
