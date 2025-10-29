@@ -1,9 +1,9 @@
 # Elegant Collectibles: Premium Art Objects & Collectibles Web Application
 
 ## 🌟 Project Overview
-[cite_start]This project is a modern web application designed for the **demonstration and management of a catalog of premium collectible toys and art objects**[cite: 44]. [cite_start]The application functions as a **digital showcase** [cite: 128] tailored to the niche market of limited-edition items and designer collectibles.
+This project is a modern web application designed for the **demonstration and management of a catalog of premium collectible toys and art objects**. The application functions as a **digital showcase**  tailored to the niche market of limited-edition items and designer collectibles.
 
-[cite_start]The solution is built on the robust **Python** programming language and the high-level web framework **Django** [cite: 45][cite_start], utilizing its efficient **Model-View-Template (MVT) architecture**[cite: 73].
+The solution is built on the robust **Python** programming language and the high-level web framework **Django** , utilizing its efficient **Model-View-Template (MVT) architecture**.
 
 ## ✨ Key Features
 The application provides comprehensive functionality for both users and administrators:
